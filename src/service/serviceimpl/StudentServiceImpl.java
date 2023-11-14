@@ -1,5 +1,6 @@
 package service.serviceimpl;
 
+import helpers.PropertiesUtils;
 import model.Student;
 import service.StudentService;
 
@@ -7,12 +8,14 @@ import javax.swing.plaf.PanelUI;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
 // create tables, backup, CRUD...
 public class StudentServiceImpl implements StudentService {
-    private static final String USERNAME="postgres";
-    private static final String PASSWORD="password";
-    private  static final String  URL = "jdbc:postgresql://localhost:5432/javascholarship_db";
+    private static Properties properties = PropertiesUtils.readProperties();
+    private static final String USERNAME = properties.getProperty("db.username");
+    private static final String PASSWORD= properties.getProperty("db.password");
+    private  static final String  URL = properties.getProperty("db.url");
 
 
     public  List<Student> getAllStudents(){

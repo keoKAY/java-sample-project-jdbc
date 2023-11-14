@@ -27,3 +27,5 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+# ignorew the username nand password
+/src/resources/database.properties
