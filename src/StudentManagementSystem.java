@@ -10,14 +10,23 @@ public class StudentManagementSystem {
     public static void main(String[] args) {
         DIContainer diContainer = new DIContainer();
         Scanner scanner = new Scanner(System.in);
-//        login (username & password )
-        List<String> studentMenu = new ArrayList<>(List.of("Add New Student", "Edit Student ", "Delete Student ", "Show All Student ", "Search Students ","Exit Program"));
+        List<String> studentMenu =
+                new ArrayList<>(
+                        List.of("Add New Student",
+                                "Edit Student ",
+                                "Delete Student ",
+                                "Show All Student ",
+                                "Search Students ",
+                                "Exit Program"));
         int option;
 
-
         do{
-            TableUtils.renderMenu(studentMenu, "Student Management System");
-            option = ValidationUtils.readInteger(">>> Choose Your Option:",scanner);
+            TableUtils.renderMenu(
+                    studentMenu,
+                    "Student Management System"
+            );
+            option = ValidationUtils
+                    .readInteger(">>> Choose Your Option:",scanner);
         }while (option!= studentMenu.size());
 
 
