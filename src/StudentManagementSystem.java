@@ -1,15 +1,21 @@
 import helpers.DIContainer;
+import model.Administrator;
 import service.AdminService;
 import service.StudentService;
 import service.serviceimpl.AdminServiceImpl;
 import service.serviceimpl.StudentServiceImpl;
 
-public class StudentManagementSystem {
+import java.sql.Timestamp;
 
+public class StudentManagementSystem {
     public static void main(String[] args) {
         DIContainer diContainer = new DIContainer();
-        System.out.println(diContainer.getStudentService().getAllStudents());
-        System.out.println(diContainer.getAdminService().getAllAdmins());
+
+//        login (username & password )
+
+//        menu
+
+
 
     }
 }

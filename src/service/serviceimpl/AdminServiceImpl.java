@@ -6,6 +6,7 @@ import service.AdminService;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 import java.util.Properties;
 
@@ -60,6 +61,23 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public int createNewAdmin(Administrator admin) {
-        return 0;
+        try(
+           Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD);
+           PreparedStatement ps = connection.prepareStatement(
+                   "INSERT into admin_tb (username, secretpass,created_date)\n" +
+                           "VALUES(?,?, now())"
+           )
+
+                ){
+            ps.setString(1,admin.getUsername());
+            ps.setString(2, Base64.getEncoder().encodeToString(admin.getPassword().getBytes()));
+
+            return ps.executeUpdate();
+
+        }catch (SQLException ex ){
+            ex.printStackTrace();
+            return 0;
+        }
+
     }
 }
