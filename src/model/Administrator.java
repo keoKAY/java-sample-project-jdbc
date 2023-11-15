@@ -1,14 +1,18 @@
 package model;
 
+import java.sql.Timestamp;
+
 public class Administrator {
     private int id;
     private String username;
     private String password;
+    private Timestamp createdDate;
 
-    public Administrator(int id, String username, String password) {
+    public Administrator(int id, String username, String password, Timestamp createdDate) {
         this.id = id;
         this.username = username;
         this.password = password;
+        this.createdDate  = createdDate;
     }
 
     public Administrator(){}
@@ -35,5 +39,13 @@ public class Administrator {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Timestamp getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(Timestamp createdDate) {
+        this.createdDate = createdDate;
     }
 }
