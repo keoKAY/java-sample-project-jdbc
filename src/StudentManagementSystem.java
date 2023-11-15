@@ -3,7 +3,6 @@ import service.serviceimpl.StudentServiceImpl;
 
 public class StudentManagementSystem {
 
-
     public static void main(String[] args) {
         StudentService studentService = new StudentServiceImpl();
 
