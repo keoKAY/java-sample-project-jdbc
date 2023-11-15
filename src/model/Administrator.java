@@ -48,4 +48,14 @@ public class Administrator {
     public void setCreatedDate(Timestamp createdDate) {
         this.createdDate = createdDate;
     }
+
+    @Override
+    public String toString() {
+        return "Administrator{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", createdDate=" + createdDate +
+                '}';
+    }
 }
